@@ -1,0 +1,6 @@
+package com.destinyed.flutter_native_api_example
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
