@@ -1,8 +1,8 @@
 name: flutter_native_api
 description: A Flutter Plugin for calling and using Native API
 version: 0.0.1
-author:
-homepage:
+#author: Destiny Ed <talk2destinyed@gmail.com>
+homepage: https://github.com/Destiny-Ed/flutter_native_api
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

@@ -7,11 +7,6 @@ class FlutterNativeApi {
   static const MethodChannel platform =
       const MethodChannel('flutter_native_api');
 
-  static Future<String?> get platformVersion async {
-    final String? version = await platform.invokeMethod('getPlatformVersion');
-    return version;
-  }
-
   static launchExternalApp(String? appPackageName) async {
     try {
       final result = await platform
@@ -82,17 +77,6 @@ class FlutterNativeApi {
       print(result);
     } on PlatformException catch (e) {
       print("Failed to get battery level: '${e.message}'.");
-    }
-  }
-
-  Future<dynamic> getVideoThumbNail(String? video) async {
-    try {
-      final result =
-      await platform.invokeMethod("videoThumbNail", {"video": video});
-      print(" ======== $result");
-      return result;
-    } catch (e) {
-      print("Erorororoororo $e");
     }
   }
 

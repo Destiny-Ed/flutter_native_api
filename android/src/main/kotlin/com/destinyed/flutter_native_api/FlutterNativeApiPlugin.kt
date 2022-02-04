@@ -6,9 +6,13 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.media.ThumbnailUtils
 import android.net.Uri
+import android.os.Build
+import android.os.CancellationSignal
 import android.provider.MediaStore
+import android.util.Size
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.startActivity
 import androidx.print.PrintHelper
 
@@ -20,6 +24,7 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
+import java.io.File
 
 /** FlutterNativeApiPlugin */
 class FlutterNativeApiPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -39,6 +44,7 @@ class FlutterNativeApiPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         context = flutterPluginBinding.applicationContext
     }
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
 //    if (call.method == "getPlatformVersion") {
 //      result.success("Android ${android.os.Build.VERSION.RELEASE}")
@@ -85,11 +91,6 @@ class FlutterNativeApiPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 val video = call.argument<String>("video")
 
                 NativeApi(context!!).shareVideo(video);
-            }
-            "videoThumbNail" -> {
-                val video = call.argument<String>("video");
-                val s = ThumbnailUtils.createVideoThumbnail(video!!, MediaStore.Images.Thumbnails.MICRO_KIND)
-                result.success(s)
             }
             else -> {
                 result.notImplemented();
