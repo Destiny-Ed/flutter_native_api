@@ -20,6 +20,8 @@ To use this plugin : *add the dependency to your [pubspec.yaml] file
         flutter_native_api:
 ```
 
+or visit [pub.dev](https://pub.dev/packages/flutter_native_api)
+
 ## How To Use
 
 ```dart
