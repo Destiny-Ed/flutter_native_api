@@ -159,6 +159,17 @@ To use this plugin : *add the dependency to your [pubspec.yaml] file
     }
 ```
 
+## Buy Me Coffee
+If you love this plugin and would love the see it grow
+[Buy Me Coffee](https://buymeacoffee.com/?via=DestinyEd)
+
+## Contributions
+This plugin is open source and is open for contributions.
+We currently require an IOS developer to extends the android functionality to IOS platform.
+
+If you can extends the functionality to IOS, Web and Desktop platform as well as add more features for Android...
+Send me an email @ talk2destinyEd@gmail.com
+
 
 ## Getting Started
 
